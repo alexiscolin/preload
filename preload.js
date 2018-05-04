@@ -3,18 +3,8 @@ self.onmessage = function (e) {
   fetch(e.data, {
     method: 'GET'
   }).then(response=>{
-    return response.text(); // on enregistre le load
+    return response.text();
   }).then((page)=>{
-
-    //test into fragment
-    // const template = document.createElement('template');
-    // const html = page.trim(); // Never return a text node of whitespace as the result
-    // template.innerHTML = html;
-
-
-    // const parser = new DOMParser();
-    // const parsed = parser.parseFromString(page, "text/html");
-    //const medias = parsed.querySelectorAll('img, video');
 
     const elsReg = /<\s?(img|video)[^>]*src="([^"]*)"/gi;
     const medias = [];
